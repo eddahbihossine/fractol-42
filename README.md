@@ -2,7 +2,7 @@
 
 Fractol is a program that allows the user to explore and visualize the Mandelbrot set and other fractals.
 
-![Fractal Image](image_url.jpg)
+![Fractal Image](![image](https://user-images.githubusercontent.com/92024331/212429506-5daf47d2-708d-4210-a701-4af1e88cbade.png))
 
 ## Installation
 
