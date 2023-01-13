@@ -5,7 +5,11 @@
 #include<unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "mlx.h"
+#define max_x 700
+#define max_y 700
+
 
 typedef struct	s_var{
 	double x;
@@ -15,6 +19,7 @@ typedef struct	s_var{
 	int iteration;
 	int max_iteration;
 	double temporary;
+	double tmp;
 
 }			var;
 typedef struct	s_data {
@@ -27,6 +32,7 @@ typedef struct	s_data {
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
 double map(double x, double in_min, double in_max, double out_min, double out_max);
 void mandelbrot (var img,t_data hello);
+void julia (var img,t_data hello);
 
 
 
