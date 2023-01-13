@@ -33,6 +33,8 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
 double map(double x, double in_min, double in_max, double out_min, double out_max);
 void mandelbrot (var img,t_data hello);
 void julia (var img,t_data hello);
+void set_color(t_data *hello, double iteration, double max_iteration, int x, int y);
+void hsv_to_rgb(double h, double s, double v, int *r, int *g, int *b);
 
 
 
