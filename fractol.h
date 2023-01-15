@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fractol.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: heddahbi <heddahbi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/15 17:50:01 by heddahbi          #+#    #+#             */
+/*   Updated: 2023/01/15 19:50:43 by heddahbi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #if !defined(FRACTOL_H)
 #define FRACTOL_H
 
@@ -21,21 +33,29 @@ typedef struct	s_var{
 	double temporary;
 	double tmp;
 
-}			var;
-typedef struct	s_data {
+}			t_var;
+
+typedef struct winvars
+{
+	t_var	params;
+	void	*mlx;
+	void	*mlx_win;
 	void	*img;
 	char	*addr;
 	int		bits_per_pixel;
 	int		line_length;
 	int		endian;
-}				t_data;
-void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
-double map(double x, double in_min, double in_max, double out_min, double out_max);
-void mandelbrot (var img,t_data hello);
-void julia (var img,t_data hello);
-void set_color(t_data *hello, double iteration, double max_iteration, int x, int y);
-void hsv_to_rgb(double h, double s, double v, int *r, int *g, int *b);
+	int		zoom;
 
+}				t_win;
+
+void	my_mlx_pixel_put(t_win *data, int x, int y, int color);
+double 	map(double x, double in_min, double in_max, double out_min, double out_max);
+void 	mandelbrot (t_win winvars);
+void 	julia (t_win winvars);
+void 	get_color(t_win *hello, double iteration, double max_iteration, int x, int y);
+void	params_to_rgb(double h, double s, double v, int *r, int *g, int *b);
+void 	bonus_fractal (t_win winvars);
 
 
 #endif 

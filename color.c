@@ -1,6 +1,6 @@
 // crreate a color function for julia 
 #include "fractol.h"
-void hsv_to_rgb(double h, double s, double v, int *r, int *g, int *b)
+void params_to_rgb(double h, double s, double v, int *r, int *g, int *b)
 {
     int i;
     double f, p, q, t;
@@ -53,11 +53,11 @@ void hsv_to_rgb(double h, double s, double v, int *r, int *g, int *b)
         break;
     }
 }
-void set_color(t_data *hello, double iteration, double max_iteration, int x, int y)
+void get_color(t_win *hello, double iteration, double max_iteration, int x, int y)
 {
     double color = iteration / max_iteration;
     int r, g, b;
-    hsv_to_rgb(color, 9, 4, &r, &g, &b);
-    my_mlx_pixel_put(hello, x, y, (r << 16) | (g << 8)* b );
+    params_to_rgb(color, 2, 2, &r, &g, &b);
+    my_mlx_pixel_put(hello, x, y, (r << 32) | (g << 8)* b );
 }
 

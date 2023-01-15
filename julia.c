@@ -1,14 +1,14 @@
 #include "fractol.h"
 
 
-void julia (var img, t_data hello)
+void julia (t_win winvars)
 {
-	img.iteration = 0.0;
-	img.max_iteration = 150.0;
+	winvars.params.iteration = 0.0;
+	winvars.params.max_iteration = 80.0;
 	double h = 0;
 	double w = 0;
-	double c_x =  -0.4; 
-	double c_y = -0.59;
+	double c_x =   -0.8; 
+	double c_y = 0.145;
 	int i ;
 
 	while (h < max_x)
@@ -17,28 +17,28 @@ void julia (var img, t_data hello)
 		w = 0;
 		while (w < max_y)
 		{
-			img.x = (w * 4 / max_x) - 2;
-			img.y = (h * 4 / max_y) - 2;
-			img.iteration = 0;
-			while (img.x * img.x + img.y * img.y <= 4 && ++img.iteration < img.max_iteration)
+			winvars.params.x = (w * 4 / (max_x )) - 2;
+			winvars.params.y = (h * 4 / (max_y )) - 2;
+			winvars.params.iteration = 0;
+			while (winvars.params.x * winvars.params.x + winvars.params.y * winvars.params.y <= 4 && ++winvars.params.iteration < winvars.params.max_iteration)
 			{
-				img.temporary = img.x * img.x - img.y * img.y + c_x;
-				img.y = 2 * img.x * img.y + c_y;
-				img.x = img.temporary;
+				winvars.params.temporary = winvars.params.x * winvars.params.x - winvars.params.y * winvars.params.y + c_x;
+				winvars.params.y = 2 * winvars.params.x * winvars.params.y + c_y;
+				winvars.params.x = winvars.params.temporary;
 			}
 			i++;
-			if (!(img.iteration == img.max_iteration))
+			if (!(winvars.params.iteration == winvars.params.max_iteration))
 			{
-				set_color(&hello, img.iteration, img.max_iteration, w, h);
+				my_mlx_pixel_put(&winvars, w, h,0x00FFFF00 >> (int)&winvars.params.temporary);
 
 			}
 			else
 			{
-				my_mlx_pixel_put(&hello, w, h,(int)(&img.max_iteration)* img.max_iteration);
+				get_color(&winvars, winvars.params.iteration, winvars.params.max_iteration, w, h);
 			}
 			w++;
 		}
 		h++;
 	}
+	
 }
-

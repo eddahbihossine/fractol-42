@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mandelbrot.c                                       :+:      :+:    :+:   */
+/*   bonus.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: heddahbi <heddahbi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/15 17:50:09 by heddahbi          #+#    #+#             */
-/*   Updated: 2023/01/15 22:52:48 by heddahbi         ###   ########.fr       */
+/*   Created: 2023/01/15 17:49:50 by heddahbi          #+#    #+#             */
+/*   Updated: 2023/01/15 19:28:10 by heddahbi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
-void mandelbrot (t_win winvars)
+void bonus_fractal (t_win winvars)
 {
 	winvars.params.iteration =0.0;
 	winvars.params.max_iteration =80.0;		
-	double h = 0.0;
-	double w= 0.0;
+	double h = 0;
+	double w= 0;
 	int i =0;
 	while(h < max_x)
 	{
@@ -35,7 +35,7 @@ void mandelbrot (t_win winvars)
 		while(winvars.params.x*winvars.params.x + winvars.params.y*winvars.params.y <= 4 && ++winvars.params.iteration < winvars.params.max_iteration)
 		{
 			winvars.params.temporary =pow(winvars.params.x,2) - pow(winvars.params.y,2) +x0;
-			winvars.params.y = 2*winvars.params.x*winvars.params.y + y0;
+			winvars.params.y = -2*winvars.params.x*winvars.params.y + y0;
 			winvars.params.x =winvars.params.temporary;
 			// params.iteration++;
 		}
@@ -49,5 +49,4 @@ void mandelbrot (t_win winvars)
 		}
 		h++;
 	}
-	
 }
