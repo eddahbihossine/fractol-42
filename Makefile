@@ -5,9 +5,10 @@ FLAGS = -Wall -Wextra -Werror
 SOURCES =	color.c \
 			main.c \
 			mandelbrot.c \
-			julia.c \
 			utils.c \
+			init.c\
 			bonus.c \
+			julia.c \
 
 OBJS = $(SOURCES:.c=.o)
 
@@ -27,10 +28,6 @@ fclean:clean
 	rm -rf $(NAME)
 
 re:fclean all
-
-
-# Path: julia.c
-#include "fractol.h"
 
 
 

@@ -53,11 +53,11 @@ void params_to_rgb(double h, double s, double v, int *r, int *g, int *b)
         break;
     }
 }
-void get_color(t_win *hello, double iteration, double max_iteration, int x, int y)
+void get_color(t_win hello, double iteration, double max_iteration, int x, int y)
 {
     double color = iteration / max_iteration;
     int r, g, b;
     params_to_rgb(color, 2, 2, &r, &g, &b);
-    my_mlx_pixel_put(hello, x, y, (r << 32) | (g << 8)* b );
+    my_mlx_pixel_put(&hello, x, y, (r << 255) | (g << 8)* b );
 }
 

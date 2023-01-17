@@ -6,7 +6,7 @@
 /*   By: heddahbi <heddahbi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 17:50:01 by heddahbi          #+#    #+#             */
-/*   Updated: 2023/01/15 19:50:43 by heddahbi         ###   ########.fr       */
+/*   Updated: 2023/01/17 13:53:29 by heddahbi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,16 @@
 typedef struct	s_var{
 	double x;
 	double y;
+	double h;
+	double w;
 	double windowxmax;
 	double windowymax;
 	int iteration;
 	int max_iteration;
 	double temporary;
 	double tmp;
+	double cx;
+	double cy;
 
 }			t_var;
 
@@ -51,11 +55,14 @@ typedef struct winvars
 
 void	my_mlx_pixel_put(t_win *data, int x, int y, int color);
 double 	map(double x, double in_min, double in_max, double out_min, double out_max);
-void 	mandelbrot (t_win winvars);
-void 	julia (t_win winvars);
-void 	get_color(t_win *hello, double iteration, double max_iteration, int x, int y);
+void 	mandelbrot (t_win *winvars, double zoom);
+void 	julia (t_win *winvars,double zoom);
+void 	get_color(t_win hello, double iteration, double max_iteration, int x, int y);
 void	params_to_rgb(double h, double s, double v, int *r, int *g, int *b);
-void 	bonus_fractal (t_win winvars);
-
+void 	bonus_fractal (t_win *winvars,double zoom);
+void init_all(t_win *winvars,double zoom);
+void init_julia(t_win *winvars ,double zoom);
 
 #endif 
+
+ 
