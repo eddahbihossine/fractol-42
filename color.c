@@ -1,63 +1,41 @@
 // crreate a color function for julia 
 #include "fractol.h"
-void params_to_rgb(double h, double s, double v, int *r, int *g, int *b)
+
+#define BLUE_GOLD 45
+int	ft_color2(t_win *data, int *color);
+
+int	ft_color(t_win 	*data)
 {
-    int i;
-    double f, p, q, t;
-    h /= 60;
-    i = (int)h;
-    f = h - i;
-    p = v * (1 - s);
-    q = v * (1 - s * f);
-    t = v * (1 - s * (1 - f));
-    while (i == 0)
-    {
-        *r = v * 255;
-        *g = t * 255;
-        *b = p * 255;
-        break;
-    }
-    while (i == 1)
-    {
-        *r = q * 255;
-        *g = v * 255;
-        *b = p * 255;
-        break;
-    }
-    while (i == 2)
-    {
-        *r = p * 255;
-        *g = v * 255;
-        *b = t * 255;
-        break;
-    }
-    while (i == 3)
-    {
-        *r = p * 255;
-        *g = q * 255;
-        *b = v * 255;
-        break;
-    }
-    while (i == 4)
-    {
-        *r = t * 255;
-        *g = p * 255;
-        *b = v * 255;
-        break;
-    }
-    while (i == 5)
-    {
-        *r = v * 255;
-        *g = p * 255;
-        *b = q * 255;
-        break;
-    }
-}
-void get_color(t_win hello, double iteration, double max_iteration, int x, int y)
-{
-    double color = iteration / max_iteration;
-    int r, g, b;
-    params_to_rgb(color, 2, 2, &r, &g, &b);
-    my_mlx_pixel_put(&hello, x, y, (r << 255) | (g << 8)* b );
+	double	ratio;
+	int		color;
+
+	if (data->color == 0)
+		color = 0x00955251;
+	if (data->color == 1)
+		color = 0x00009B77;
+	if (data->color == 2)
+		color = 0x0000A170;
+	if (data->color == 3)
+		color = 0x00FFA500;
+	ft_color2(data, &color);
+	ratio = (double)(data->params.iteration) / (double)data->params.max_iteration ;
+	return (ratio * color);
 }
 
+int	ft_color2(t_win *data, int *color)
+{
+	if (data->color == 4)
+		*color = 0x009A8B4F;
+	if (data->color == 5)
+		*color = 0x00944743;
+	if (data->color == 6)
+		*color = 0x00B9E8EA;
+	if (data->color == 7)
+		*color = 0x0063A75A;
+	if (data->color == 8)
+	{
+		*color = BLUE_GOLD;
+		data->color = 0;
+	}
+	return (0);
+}

@@ -6,7 +6,7 @@
 /*   By: heddahbi <heddahbi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 17:50:01 by heddahbi          #+#    #+#             */
-/*   Updated: 2023/01/17 13:53:29 by heddahbi         ###   ########.fr       */
+/*   Updated: 2023/01/18 00:48:40 by heddahbi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ typedef struct winvars
 	int		line_length;
 	int		endian;
 	int		zoom;
+	int 	color;
 
 }				t_win;
 
@@ -62,7 +63,11 @@ void	params_to_rgb(double h, double s, double v, int *r, int *g, int *b);
 void 	bonus_fractal (t_win *winvars,double zoom);
 void init_all(t_win *winvars,double zoom);
 void init_julia(t_win *winvars ,double zoom);
-
+int mandelbrot_mouse_hook (int keycode ,int x, int y, t_win *window);
+int julia_mouse_hook (int keycode ,int x, int y, t_win *window);
+int bonus_mouse_hook (int keycode ,int x, int y, t_win *window);
+int mandelbrot_key_event(int params,int x, int y, t_win *window);
+int	ft_close(t_win *window);
 #endif 
 
  
