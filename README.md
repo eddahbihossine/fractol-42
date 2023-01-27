@@ -14,9 +14,9 @@ Fractol is a program that allows the user to explore and visualize the Mandelbro
 Fractol supports several different fractals, including the Mandelbrot set, Julia set, and Burning Ship fractal. To display a specific fractal, use the corresponding name as a command line argument when running the program. For example:
 
 ```bash
-./fractol mandelbrot
-./fractol julia
-./fractol burning_ship
+./fract-ol mandelbrot
+./fract-ol julia
+./fract-ol tricorn
 ```
 Once the program is running, use the following controls to navigate and explore the fractal:
 
