@@ -5,6 +5,12 @@ Fractol is a visually stunning program that allows users to explore and visualiz
 
 ![Fractal Image](images/fractal.png)
 
+## Requirements 🖥️
+
+- **macOS**: This program has been tested and confirmed to work on macOS. Performance and compatibility may vary on other systems.
+- **minilibx** : This project requires the minilibx library to compile and run. The library is included in the repository and should work out of the box on macOS.
+
+
 ## Installation 📥
 
 Follow the steps below to install and run the Fractol program:
@@ -67,9 +73,7 @@ Once the program is running, you can interact with the fractal using the followi
 - **Change Color Palette**: Press the **`C`** key to cycle through different color schemes. This adds variety to the visualization of the fractal.
 - **Reset View**: Press the **`R`** key to reset the view to the default zoom level and center position, in case you get lost in the fractal or want to start fresh.
   
-## System Requirements 🖥️
 
-- **macOS**: This program has been tested and confirmed to work on macOS. Performance and compatibility may vary on other systems.
 
 ## Troubleshooting 🛠️
 
