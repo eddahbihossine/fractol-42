@@ -68,10 +68,8 @@ Once the program is running, you can interact with the fractal using the followi
 
 ### Keyboard Controls ⌨️
 
-- **Increase Iterations**: Press the **`+`** key to increase the number of iterations used to calculate the fractal. This enhances the level of detail but may affect performance at very high values.
-- **Decrease Iterations**: Press the **`-`** key to reduce the number of iterations, speeding up rendering but reducing detail.
 - **Change Color Palette**: Press the **`C`** key to cycle through different color schemes. This adds variety to the visualization of the fractal.
-- **Reset View**: Press the **`R`** key to reset the view to the default zoom level and center position, in case you get lost in the fractal or want to start fresh.
+
   
 
 
